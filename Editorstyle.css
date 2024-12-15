@@ -1,0 +1,225 @@
+/* Основные стили для страницы */
+body {
+    font-family: Arial, sans-serif; /* Основной шрифт страницы */
+    margin: 0; /* Убираем внешние отступы у body */
+    padding: 0; /* Убираем внутренние отступы у body */
+    background-color: #f4f4f4; /* Устанавливаем фоновый цвет страницы */
+    color: #333; /* Основной цвет текста */
+}
+
+h2, h3 {
+    color: #333; /* Цвет для заголовков второго и третьего уровней */
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: #333; /* Цвет текста ссылок */
+}
+
+/* Стили для боковой панели */
+.sidebar {
+    position: fixed; /* Фиксированная позиция панели */
+    top: 0; /* Привязка к верхней части экрана */
+    left: 0; /* Привязка к левой части экрана */
+    width: 200px; /* Ширина боковой панели */
+    background-color: #222; /* Темный фон для панели */
+    color: white; /* Цвет текста белый */
+    height: 100%; /* Занимает всю высоту экрана */
+    padding-top: 20px; /* Отступ сверху внутри панели */
+}
+
+.sidebar a {
+    display: block; /* Каждый пункт на отдельной строке */
+    padding: 10px; /* Внутренние отступы для удобства клика */
+    color: white; /* Белый текст для ссылок */
+    text-align: center; /* Выравнивание текста по центру */
+    font-size: 18px; /* Размер текста ссылок */
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #555; /* Цвет фона при наведении или активности */
+}
+
+/* Основная часть контента */
+.content {
+    margin-left: 220px; /* Отступ слева для размещения рядом с боковой панелью */
+    padding: 20px; /* Внутренние отступы */
+}
+
+.content-section {
+    display: none; /* Скрываем секции контента по умолчанию */
+}
+
+.content-section.active {
+    display: block; /* Показываем активную секцию */
+}
+
+/* Стили для вкладок */
+.tabs {
+    display: flex; /* Включаем режим flex для горизонтального расположения */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.tab {
+    flex: 1; /* Равномерное распределение ширины вкладок */
+    text-align: center; /* Выравнивание текста по центру */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #ddd; /* Фон вкладки по умолчанию */
+    cursor: pointer; /* Указатель меняется на указатель при наведении */
+    font-weight: bold; /* Жирный текст */
+}
+
+.tab.active {
+    background-color: #1e88e5; /* Цвет активной вкладки */
+    color: white; /* Белый текст для активной вкладки */
+}
+
+.tab:hover {
+    background-color: #ccc; /* Цвет фона вкладки при наведении */
+}
+
+/* Стили для кнопок и текста */
+button {
+    background-color: #4CAF50; /* Основной цвет кнопки */
+    border: none; /* Убираем рамки */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Внутренние отступы */
+    text-align: center; /* Текст по центру */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Указатель меняется на указатель */
+    margin: 5px; /* Внешние отступы */
+}
+
+button:hover {
+    background-color: #45a049; /* Цвет кнопки при наведении */
+}
+
+textarea {
+    width: 100%; /* Полная ширина */
+    height: 150px; /* Высота текстового поля */
+    padding: 10px; /* Внутренние отступы */
+    margin-bottom: 10px; /* Отступ снизу */
+    font-size: 16px; /* Размер текста */
+    border: 1px solid #ccc; /* Рамка текстового поля */
+    border-radius: 4px; /* Скругленные углы */
+}
+
+/* Стили для библиотеки формул */
+#math-library, #physics-library {
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+#math-library button, #physics-library button {
+    background-color: #3498db; /* Цвет кнопок в библиотеках */
+    color: white; /* Белый текст кнопок */
+    border: none; /* Без рамок */
+    padding: 10px; /* Внутренние отступы */
+    font-size: 16px; /* Размер текста */
+    margin: 5px; /* Отступы между кнопками */
+    cursor: pointer; /* Указатель меняется на указатель */
+}
+
+#math-library button:hover, #physics-library button:hover {
+    background-color: #2980b9; /* Цвет кнопок при наведении */
+}
+
+/* Стили для сохранённых формул */
+#saved-math-formulas, #saved-physics-formulas {
+    margin-top: 20px; /* Отступ сверху */
+}
+
+#saved-math-formulas ul, #saved-physics-formulas ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding-left: 0; /* Убираем отступы списка */
+}
+
+#saved-math-formulas li, #saved-physics-formulas li {
+    padding: 10px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон для элемента списка */
+    border: 1px solid #ccc; /* Рамка для элемента списка */
+    margin-bottom: 5px; /* Отступы между элементами */
+    display: flex; /* Гибкий контейнер */
+    justify-content: space-between; /* Равномерное распределение кнопок */
+    align-items: center; /* Выравнивание по центру */
+}
+
+/* Стили для кнопок управления формулами */
+.formula-actions {
+    display: inline-flex; /* Горизонтальное расположение кнопок */
+    gap: 5px; /* Расстояние между кнопками */
+    align-items: center; /* Выравнивание по центру */
+}
+
+.formula-actions button {
+    margin: 0; /* Убираем внешние отступы */
+    padding: 5px 10px; /* Стандартные отступы */
+}
+
+.formula-actions button.delete {
+    background-color: #e74c3c; /* Цвет кнопки удаления */
+}
+
+.formula-actions button.delete:hover {
+    background-color: #c0392b; /* Цвет при наведении */
+}
+
+.formula-actions button:hover {
+    background-color: #45a049; /* Цвет других кнопок при наведении */
+}
+
+.output-box {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон */
+    border: 1px solid #ccc; /* Рамка */
+    font-size: 18px; /* Размер текста */
+    white-space: pre-wrap; /* Сохранение пробелов */
+    word-wrap: break-word; /* Перенос длинных слов */
+}
+
+/* Стили для ошибки */
+.error-message {
+    color: red; /* Цвет текста ошибки */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.hidden {
+    display: none; /* Скрытие элемента */
+}
+
+#edit-section {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Рамка */
+    background-color: #f9f9f9; /* Фон для секции редактирования */
+}
+
+.formula-text {
+    margin-right: 10px; /* Отступ справа для текста формулы */
+    font-family: monospace; /* Моноширинный шрифт */
+}
+
+/* Выравнивание кнопок "Редактировать" и "Удалить" */
+.saved-math-formula {
+    display: flex; /* Гибкое расположение элементов */
+    justify-content: space-between; /* Равномерное распределение */
+    align-items: center; /* Выравнивание по центру */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.saved-math-formula button {
+    margin: 0 5px; /* Отступы между кнопками */
+    padding: 5px 10px; /* Удобные отступы внутри кнопок */
+    cursor: pointer; /* Указатель меняется на указатель */
+}
+
+#saved-math-list {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы списка */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+.saved-math-formula-text {
+    flex-grow: 1; /* Растягивает текст на доступное пространство */
+    margin-right: 10px; /* Отступ справа */
+}
