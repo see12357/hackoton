@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16.3-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:admin@postgres:5432/postgres
+    depends_on:
+      - postgres
+
+  llm-service:
+    image: python:3.9-slim
+    container_name: ml-model
+    volumes:
+      - ./all-MiniLM-L6-v2:/app/model
+    working_dir: /app
+    command: ["python", "formula.py"]
+    ports:
+      - "8090:8090"
+
+volumes:
+  postgres_data:
