@@ -20,7 +20,7 @@ def connect_to_db():
     except Exception as e:
         print("Ошибка подключения к базе данных:", e)
         return None
-
+#Парс формулы
 def parse_formula(expr):
     """Преобразует выражение SymPy в JSON-совместимую структуру."""
     try:
