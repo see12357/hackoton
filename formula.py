@@ -5,7 +5,7 @@ from sympy.core.basic import Basic
 import json
 import hashlib
 import re
-
+#Подключение к базе данных
 def connect_to_db():
     """Устанавливает соединение с базой данных."""
     try:
